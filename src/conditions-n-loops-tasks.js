@@ -40,7 +40,7 @@ const getMaxNumber = (a, b, c) => {
   if (a > b && a > c) {
     return a;
   }
-  if (b > a && b > c) {
+  if (b > c) {
     return b;
   }
   return c;
@@ -64,9 +64,18 @@ const getMaxNumber = (a, b, c) => {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
-}
+const canQueenCaptureKing = (queen, king) => {
+  if (
+    king.x === queen.x ||
+    king.y === queen.y ||
+    king.x + king.y === queen.x + queen.y ||
+    king.x - king.y === queen.x - queen.y ||
+    king.y - king.x === queen.y - queen.x
+  ) {
+    return true;
+  }
+  return false;
+};
 
 /**
  * Determines whether a triangle is isosceles based on its side lengths.
