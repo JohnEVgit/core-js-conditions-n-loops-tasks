@@ -217,6 +217,7 @@ const convertNumberToString = (numberStr) => {
       case '0':
         digitStr = 'zero';
         break;
+
       case '.':
       case ',':
         digitStr = 'point';
