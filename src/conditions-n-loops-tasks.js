@@ -301,9 +301,18 @@ const getIndexOf = (str, letter) => {
  *  12345, 0    => false
  *  12345, 6    => false
  */
-function isContainNumber(/* num, digit */) {
-  throw new Error('Not implemented');
-}
+const isContainNumber = (num, digit) => {
+  const strNum = `${num}`;
+  const strDigit = `${digit}`;
+
+  for (let i = 0; i < strNum.length; i += 1) {
+    if (strNum[i] === strDigit) {
+      return true;
+    }
+  }
+
+  return false;
+};
 
 /**
  * Finds the index of an element in an array where the sum of elements to the left equals the sum of elements to the right.
