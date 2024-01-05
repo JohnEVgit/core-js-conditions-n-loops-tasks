@@ -252,9 +252,15 @@ const convertNumberToString = (numberStr) => {
  *  '0123210'   => true
  *  'qweqwe'    => false
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
-}
+const isPalindrome = (str) => {
+  let revertStr = '';
+
+  for (let i = str.length - 1; i >= 0; i -= 1) {
+    revertStr += str[i];
+  }
+
+  return str === revertStr;
+};
 
 /**
  * Finds the first occurrence of a letter in a string.
